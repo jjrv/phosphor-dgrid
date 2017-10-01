@@ -1,0 +1,36 @@
+{
+  "name": "phosphor-dgrid",
+  "version": "0.0.1",
+  "description": "Full-featured Dojo-based grid widget for PhosphorJS",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "prepublish": "tsc -p src"
+  },
+  "author": "Juha Järvi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charto/phosphor-dgrid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charto/phosphor-dgrid/issues"
+  },
+  "homepage": "https://github.com/charto/phosphor-dgrid#readme",
+  "keywords": [
+    "dojo",
+    "grid",
+    "phosphorjs"
+  ],
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "@phosphor/widgets": "^1.5.0",
+    "dgrid": "^1.2.1",
+    "dojo": "^1.13.0",
+    "dojo-dstore": "^1.1.2",
+    "dojo-typings": "github:jjrv/dojo-typings#develop"
+  }
+}
