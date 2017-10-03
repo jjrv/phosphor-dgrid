@@ -16,9 +16,9 @@ export class DGrid extends Widget {
 	constructor(public dgrid = new OnDemandGrid(), public store = new Memory()) {
 		super({ node: DGrid.createNode() });
 
-		this.addClass('charto-DGrid');
-
 		dgrid.create(null, this.node);
+
+		this.addClass('charto-DGrid');
 	}
 
 	protected onBeforeAttach(msg: Message) {
