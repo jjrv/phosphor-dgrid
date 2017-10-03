@@ -21,7 +21,7 @@ export class DGrid extends Widget {
 		this.addClass('charto-DGrid');
 	}
 
-	protected onBeforeAttach(msg: Message) {
+	protected onAfterAttach(msg: Message) {
 		this.dgrid.startup();
 	}
 
@@ -30,7 +30,7 @@ export class DGrid extends Widget {
 		return(node);
 	}
 
-	update() {
+	onResize(msg: Widget.ResizeMessage) {
 		this.dgrid.resize();
 	}
 
