@@ -5,6 +5,8 @@ import 'dojo/resources/dnd.css!';
 
 import * as aspect from 'dojo/aspect';
 
+import * as Source from 'dojo/dnd/Source';
+
 import * as OnDemandGrid from 'dgrid/OnDemandGrid';
 import * as Keyboard from 'dgrid/Keyboard';
 import * as Selection from 'dgrid/Selection';
@@ -19,6 +21,17 @@ import * as Trackable from 'dstore/Trackable';
 import * as TreeStore from 'dstore/Tree';
 
 import { DGrid } from './DGrid';
+
+function nop() {}
+
+// Prevent dojo/dnd from eating mousedown events
+// needed for updating keyboard focus in dgrid.
+
+aspect.before((Source as any).superclass, 'onMouseDown', (e: MouseEvent) => {
+	e.stopPropagation = nop;
+	e.preventDefault = nop;
+	return([ e ]);
+});
 
 export type TreeGridOptions = (
 	OnDemandGrid.KwArgs &
